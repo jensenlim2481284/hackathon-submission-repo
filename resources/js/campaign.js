@@ -85,7 +85,7 @@ var createCampaign = async function() {
 
     // Publish campaign
     const makeCampaign =  client.force.makeCampaign(campaignToIpfs, 0)
-
+    
     // Update batches
     var task = [];
     $.each($('.task'),function(i,e){
@@ -94,11 +94,11 @@ var createCampaign = async function() {
     const content = {
         'tasks': task
     }
-        
+    await $(window).delay(5000).promise();
+
     // Retrieve the campaign that was last created & create batch 
-    const campaign = await client.force.getMyLastCampaign()
+    const campaign = await client.force.getMyLastCampaign();
     const batch = await client.force.createBatch(campaign.id, content, 1)
-    console.log(batch);
 
     // Response 
     swal("Campaign Successfully Created", {
