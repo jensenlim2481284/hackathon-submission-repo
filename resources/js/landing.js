@@ -33,10 +33,6 @@ $(document).ready(function() {
     
     // Hide loader 
     hideLoader();
-    setTimeout(function() {
-        hideLoader();
-    }, 1000);
-
 
 
 });

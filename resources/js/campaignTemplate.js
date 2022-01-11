@@ -1,16 +1,32 @@
-let templateContent = `
+const templateContent = `
 
     <style>
-    
-    
+        p{
+                font-size: 13px;
+                color: gray;
+                font-family: Arial;
+                opacity: 0.7;
+        }
+        label{
+                font-family: Arial;
+                font-size: 15px;
+                line-height: 22px;
+                color: #464646;
+        }
+        button{
+            opacity:0;
+        }
+        .task-content{
+            border-left: 6px solid #e3e3e3;
+            padding: 15px;
+            padding-left: 25px;
+            background: #f5f5f5;
+        }
     </style>
-
-    <label id='content'> + '${content}' + </label>
-    <p> Speak 'start' to begin listen </p>
-    <p> Speak 'repeat' to repeat the speech </p>
-    <p> Speak 'positive' to answer positive </p>
-    <p> Speak 'negative' to answer negative </p>
-    <p> Speak 'neutral' to answer neutral </p>
+    <div class='task-content'>
+        <label id='content'>` + '${content}' + ` </label>
+    </div>
+    <p> Please check instructions for the voice command </p>
 
     <input type='hidden' name='answer' id='answer'/>
     <button id="submit" type="submit">Submit</button> 
