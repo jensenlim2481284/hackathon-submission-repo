@@ -1,0 +1,39 @@
+<!DOCTYPE html encoding>
+<html lang="en">
+
+    <head>
+
+            <title>Effect Voice</title>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link rel="shortcut icon" href="/resources/img/logo.ico"/>
+            <link href="/resources/css/bootstrap.min.css" type="text/css" rel="stylesheet"/>
+            <link href="/resources/css/themify.css" type="text/css" rel="stylesheet"/>
+            <link href="/resources/css/campaign.css" type="text/css" rel="stylesheet"/>
+            <script src="./node_modules/@effectai/effect-js/dist/index.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+            <script src="/resources/js/sweetalert.min.js"></script>
+            
+    </head>
+    <body>
+        
+        <h1> Create Campaign  </h1>
+        
+        <h3> Title </h3>
+        <input type='text' id='title'/>
+        
+        <h3> Description </h3>
+        <input type='text' id='description'/>        
+        
+        <h3> Reward </h3>
+        <input type='number' step='0.01' id='reward'/>
+        
+        <button class='btn btn-primary'> Create </button>
+        
+        
+        <script src="/resources/js/campaignTemplate.js"></script>
+        <!-- <script src="/resources/js/campaign.js"></script> -->
+
+    </body>
+</html>
