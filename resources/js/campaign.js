@@ -54,7 +54,7 @@ var createCampaign = async function() {
         // Instructions
         instructions: `**Voice Instruction**    
 
-        Say "start" to start listening to tasks.
+        Say "begin" to start listening to tasks.
         Say "repeat" to repeat the speech.
         Say "positive" to answer a positive.
         Say "negative" to answer a negative.

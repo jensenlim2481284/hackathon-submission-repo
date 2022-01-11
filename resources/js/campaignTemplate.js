@@ -35,6 +35,8 @@ const templateContent = `
     <script>
 
         if('webkitSpeechRecognition' in window) {
+
+            console.log(1);
             var speechRecognizer = new webkitSpeechRecognition();
             speechRecognizer.continuous = true;
             speechRecognizer.interimResults = true;
@@ -44,12 +46,12 @@ const templateContent = `
             speechRecognizer.onresult = function(event) {
                 var interimTranscripts = '';
                 for(var i = event.resultIndex; i < event.results.length; i++){
-                    var transcript = event.results[i][0].transcript;	
-                    transcript = $.trim(transcript).toLowerCase();			
+                    var transcript = event.results[i][0].transcript;
+                    transcript = $.trim(transcript).toLowerCase();		
                     switch(transcript){
                         
                         case "repeat" : 
-                        case "start" : 
+                        case "begin" : 
                             var message = new SpeechSynthesisUtterance($("#content").text());
                             var voices = speechSynthesis.getVoices();
                             speechSynthesis.speak(message);
