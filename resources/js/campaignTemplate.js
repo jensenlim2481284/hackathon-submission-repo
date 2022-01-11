@@ -46,35 +46,35 @@ const templateContent = `
             speechRecognizer.onresult = function(event) {
                 var interimTranscripts = '';
                 for(var i = event.resultIndex; i < event.results.length; i++){
-
                     var transcript = event.results[i][0].transcript;
                     transcript = $.trim(transcript).toLowerCase();		
-                    if(event.results[i].isFinal) {
-                        switch(transcript){
-                            
-                            case "repeat" : 
-                            case "begin" : 
-                                var message = new SpeechSynthesisUtterance($("#content").text());
-                                var voices = speechSynthesis.getVoices();
-                                speechSynthesis.speak(message);
-                                break;
+                    switch(transcript){
+                        
+                        case "repeat" : 
+                        case "begin" : 
+                            var message = new SpeechSynthesisUtterance($("#content").text());
+                            var voices = speechSynthesis.getVoices();
+                            speechSynthesis.speak(message);
+                            return true;
+                            break;
 
-                            case "positive" : 
-                                $("#answer").val('positive');
-                                $("#submit").click();
-                                break;
+                        case "positive" : 
+                            $("#answer").val('positive');
+                            $("#submit").click();
+                            return true;
+                            break;
 
-                            case "negative" : 
-                                $("#answer").val('negative');
-                                $("#submit").click();
-                                break;
+                        case "negative" : 
+                            $("#answer").val('negative');
+                            $("#submit").click();
+                            return true;
+                            break;
 
-                            case "neutral" : 
-                                $("#answer").val('neutral');
-                                $("#submit").click();
-                                break;
-
-                        }
+                        case "neutral" : 
+                            $("#answer").val('neutral');
+                            $("#submit").click();
+                            return true;
+                            break;
                     }
                     
                 }
